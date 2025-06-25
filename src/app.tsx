@@ -67,8 +67,8 @@ const data = getData()
 const Z_INDEX_SELECTED = data.length;
 const Z_INDEX_HOVER = data.length + 1;
 
-const API_KEY =
-  globalThis.PUBLIC_GOOGLE_MAPS_API_KEY ?? (process.env.PUBLIC_GOOGLE_MAPS_API_KEY as string);
+const API_KEY = import.meta.env.VITE_PUBLIC_GOOGLE_MAPS_API_KEY;
+const MAP_ID = import.meta.env.VITE_PUBLIC_MAP_ID;
 
 const App = () => {
   const [markers] = useState<MarkerItem[]>(data);
@@ -113,7 +113,7 @@ const App = () => {
   return (
     <APIProvider apiKey={API_KEY} libraries={['marker']}>
       <Map
-        mapId={process.env.PUBLIC_MAP_ID}
+        mapId={MAP_ID}
         defaultZoom={12}
         defaultCenter={{ lat: 36.33, lng: -119.28 }} // central CA approx
         gestureHandling={'greedy'}

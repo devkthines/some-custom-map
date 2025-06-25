@@ -113,7 +113,7 @@ const App = () => {
   return (
     <APIProvider apiKey={API_KEY} libraries={['marker']}>
       <Map
-        mapId={'b69877d43ffe408e'}
+        mapId={process.env.PUBLIC_MAP_ID}
         defaultZoom={12}
         defaultCenter={{ lat: 36.33, lng: -119.28 }} // central CA approx
         gestureHandling={'greedy'}

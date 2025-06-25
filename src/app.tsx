@@ -68,7 +68,7 @@ const Z_INDEX_SELECTED = data.length;
 const Z_INDEX_HOVER = data.length + 1;
 
 const API_KEY =
-  globalThis.GOOGLE_MAPS_API_KEY ?? (process.env.GOOGLE_MAPS_API_KEY as string);
+  globalThis.PUBLIC_GOOGLE_MAPS_API_KEY ?? (process.env.PUBLIC_GOOGLE_MAPS_API_KEY as string);
 
 const App = () => {
   const [markers] = useState<MarkerItem[]>(data);

@@ -68,7 +68,7 @@ const Z_INDEX_SELECTED = data.length;
 const Z_INDEX_HOVER = data.length + 1;
 
 const API_KEY =
-  globalThis.NEXT_GOOGLE_MAPS_API_KEY ?? (process.env.NEXT_GOOGLE_MAPS_API_KEY as string);
+  globalThis.GOOGLE_MAPS_API_KEY ?? (process.env.GOOGLE_MAPS_API_KEY as string);
 
 const App = () => {
   const [markers] = useState<MarkerItem[]>(data);
@@ -113,7 +113,7 @@ const App = () => {
   return (
     <APIProvider apiKey={API_KEY} libraries={['marker']}>
       <Map
-        mapId={process.env.NEXT_MAP_ID}
+        mapId={process.env.PUBLIC_MAP_ID}
         defaultZoom={12}
         defaultCenter={{ lat: 36.33, lng: -119.28 }} // central CA approx
         gestureHandling={'greedy'}
